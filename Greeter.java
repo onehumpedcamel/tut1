@@ -13,9 +13,10 @@ public class Greeter {
 
   public String sayHello() {
     ResourceBundle messages = ResourceBundle.getBundle("MessagesBundle", locale);
-    return messages.getString("greeting") + ", " + name;
+    return messages.getString("greeting") + ", " + name.toUpperCase();
   }
-
+  //maybe this works
+  
   public static void main(String[] args) {
     if(args.length > 0) {
         String language = args[0];
@@ -24,6 +25,6 @@ public class Greeter {
         Greeter greeter = new Greeter(language, country, name);
         System.out.println(greeter.sayHello());
     }
-    System.out.println("No arguments have been entered, please try again");
+    System.out.println("No arguments have been entered");
   }
 }
